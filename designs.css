@@ -1,0 +1,288 @@
+/* TinyCloud visual lab: two production-ready directions. */
+.design-lab {
+  position: fixed;
+  z-index: 100;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid #d9d5cd;
+  border-radius: 999px;
+  background: #fffdf9e8;
+  box-shadow: 0 14px 38px #30261c1f;
+  backdrop-filter: blur(16px);
+}
+.design-lab > span {
+  padding: 0 7px;
+  color: #8a8d89;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .3px;
+}
+.design-lab button {
+  height: 31px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 999px;
+  color: #646a66;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 800;
+}
+.design-lab button i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7658, #765edd);
+}
+.design-lab button:last-child i { background: linear-gradient(135deg, #2463eb, #35c7a3); }
+.design-lab button.active { color: #fff; background: var(--ink); }
+
+.hero-doodles i {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: #9f4a37;
+  background: #fff;
+  font-style: normal;
+  font-weight: 900;
+  box-shadow: 0 12px 28px #34241d18;
+  animation: tinyBob 3.8s ease-in-out infinite alternate;
+}
+.hero-doodles i:first-child {
+  top: 105px;
+  left: 4%;
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  color: #735ddd;
+  transform: rotate(-9deg);
+}
+.hero-doodles i:nth-child(2) {
+  top: 215px;
+  right: 4%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: #267656;
+  transform: rotate(10deg);
+}
+.hero-doodles i:last-child {
+  top: 70px;
+  right: 12%;
+  width: 53px;
+  height: 34px;
+  border: 1px solid #ffb8a8;
+  border-radius: 999px;
+  color: #d84e32;
+  font-size: 11px;
+  transform: rotate(7deg);
+  animation-delay: -1.7s;
+}
+@keyframes tinyBob { to { translate: 0 -8px; } }
+
+.hero-proof {
+  position: relative;
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 27px auto 0;
+  padding: 13px 0;
+  border-top: 1px solid #dedbd4;
+  border-bottom: 1px solid #dedbd4;
+}
+.hero-proof div { padding: 1px 14px; border-right: 1px solid #e2dfd8; }
+.hero-proof div:last-child { border: 0; }
+.hero-proof b,
+.hero-proof span { display: block; }
+.hero-proof b { font-size: 15px; letter-spacing: -.4px; }
+.hero-proof span { margin-top: 3px; color: #8a8f8b; font-size: 11px; }
+
+/* The build conversation belongs beside the result, on the right. */
+.showcase-body { grid-template-columns: 1fr 300px; }
+.build-chat {
+  grid-column: 2;
+  grid-row: 1;
+  border-right: 0;
+  border-left: 1px solid #e3e1dc;
+}
+.preview-space { grid-column: 1; grid-row: 1; }
+.builder-body { grid-template-columns: 1fr 330px; }
+.builder-chat {
+  grid-column: 2;
+  grid-row: 1;
+  border-right: 0;
+  border-left: 1px solid #dad8d2;
+}
+.builder-canvas { grid-column: 1; grid-row: 1; }
+
+/* Direction A: Cloud Pop — warm, welcoming and deliberately light. */
+body[data-design="cloud"] .site-nav {
+  margin-top: 10px;
+  padding-inline: 18px;
+  border: 1px solid #e2ded5;
+  border-radius: 16px;
+  background: #fffdf8bd;
+  box-shadow: 0 8px 30px #4635290a;
+  backdrop-filter: blur(14px);
+}
+body[data-design="cloud"] .hero { padding-top: 82px; }
+body[data-design="cloud"] .hero h1 { text-wrap: balance; }
+body[data-design="cloud"] .prompt-card {
+  border-color: #e4b9ad;
+  box-shadow: 0 0 0 6px #fff8f4, 0 28px 75px #35261d1c;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+body[data-design="cloud"] .prompt-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 6px #fff1eb, 0 34px 80px #ff654525;
+}
+body[data-design="cloud"] .prompt-examples button:hover,
+body[data-design="cloud"] .idea-grid button:hover,
+body[data-design="cloud"] .lifecycle-grid article:hover {
+  transform: translateY(-3px) rotate(-.3deg);
+}
+body[data-design="cloud"] .showcase-window,
+body[data-design="cloud"] .architecture-card,
+body[data-design="cloud"] .approval-card,
+body[data-design="cloud"] .comparison-card { border-radius: 20px; }
+body[data-design="cloud"] .app-sidebar { background: #f0eee8; }
+body[data-design="cloud"] .app-prompt {
+  border-color: #dfb6aa;
+  box-shadow: 0 0 0 5px #fff7f2, 0 18px 45px #38281e12;
+}
+
+/* Direction B: Studio Grid — crisp, more editorial, still energetic. */
+body[data-design="studio"] {
+  --ink: #13213c;
+  --muted: #64718a;
+  --line: #cfd9e8;
+  --paper: #f4f7fc;
+  --cream: #e9eef8;
+  --coral: #2867e8;
+  --red: #174fc4;
+  --green: #148067;
+  --purple: #7758e8;
+  --blue: #2867e8;
+  background: #f4f7fc;
+}
+body[data-design="studio"] .landing {
+  background-image: linear-gradient(#d8e0ed66 1px, transparent 1px), linear-gradient(90deg, #d8e0ed66 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+body[data-design="studio"] .site-nav {
+  border-bottom: 1px solid #cfd9e8;
+  background: #f4f7fce8;
+  backdrop-filter: blur(15px);
+}
+body[data-design="studio"] .brand-mark i,
+body[data-design="studio"] .brand-mark i:first-child,
+body[data-design="studio"] .brand-mark i:nth-child(3) { background: #2867e8; }
+body[data-design="studio"] .brand-mark i:first-child { background: #8c6eff; }
+body[data-design="studio"] .brand-mark i:nth-child(3) { background: #22b796; }
+body[data-design="studio"] .hero {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  grid-template-areas:
+    "eyebrow prompt"
+    "title prompt"
+    "copy capability"
+    "proof examples";
+  column-gap: 70px;
+  align-items: center;
+  padding: 108px 0 92px;
+  text-align: left;
+}
+body[data-design="studio"] .hero .eyebrow { grid-area: eyebrow; justify-self: start; }
+body[data-design="studio"] .hero h1 { grid-area: title; margin: 27px 0 23px; font-size: clamp(53px, 5.8vw, 76px); }
+body[data-design="studio"] .hero-copy { grid-area: copy; width: auto; margin: 0; }
+body[data-design="studio"] .prompt-card {
+  grid-area: prompt;
+  width: 100%;
+  margin: 0;
+  padding: 22px;
+  border: 2px solid #13213c;
+  border-radius: 8px;
+  box-shadow: 12px 12px 0 #c9d8f5;
+}
+body[data-design="studio"] .capability-row { grid-area: capability; justify-content: flex-start; margin-top: 23px; }
+body[data-design="studio"] .prompt-examples { grid-area: examples; justify-content: flex-start; }
+body[data-design="studio"] .hero-proof {
+  grid-area: proof;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 23px 0 0;
+}
+body[data-design="studio"] .hero-proof div:nth-child(2) { border-right: 0; }
+body[data-design="studio"] .hero-proof div:nth-child(n+3) { display: none; }
+body[data-design="studio"] .moving-gradient {
+  background-image: linear-gradient(100deg, #1f5de0, #7758e8, #18a887, #1f5de0);
+}
+body[data-design="studio"] .hero-aura { opacity: .22; filter: blur(90px); }
+body[data-design="studio"] .aura-one { background: #8badff; }
+body[data-design="studio"] .aura-two { background: #8be8cf; }
+body[data-design="studio"] .hero-doodles i { border: 1px solid #8ea6cb; border-radius: 4px; color: #174fc4; box-shadow: 7px 7px 0 #d6e2f5; }
+body[data-design="studio"] .eyebrow span { background: #2867e8; box-shadow: 0 0 0 4px #2867e81d; }
+body[data-design="studio"] .prompt-footer button,
+body[data-design="studio"] .accent-button { background: #2867e8; box-shadow: none; }
+body[data-design="studio"] .prompt-examples button { border-color: #c7d3e6; border-radius: 5px; background: #f8faff; }
+body[data-design="studio"] .showcase-window,
+body[data-design="studio"] .architecture-card,
+body[data-design="studio"] .approval-card,
+body[data-design="studio"] .comparison-card,
+body[data-design="studio"] .launch-visual { border-color: #bdcbe0; border-radius: 8px; box-shadow: 9px 9px 0 #dce5f2; }
+body[data-design="studio"] .lifecycle-section,
+body[data-design="studio"] .governance-band { background: #e9eff9; }
+body[data-design="studio"] .pricing-section { background: #f7f9fd; }
+body[data-design="studio"] .saving-banner { background: linear-gradient(115deg, #1e5ddd, #7456e3 60%, #18a887); }
+body[data-design="studio"] .app-shell { background: #f2f6fc; }
+body[data-design="studio"] .app-topbar { border-color: #cbd6e5; background: #f7f9fdee; }
+body[data-design="studio"] .app-sidebar { border-color: #cbd6e5; background: #e7edf7; }
+body[data-design="studio"] .new-tool-button,
+body[data-design="studio"] .publish-button { background: #2867e8; }
+body[data-design="studio"] .app-prompt,
+body[data-design="studio"] .tools-card,
+body[data-design="studio"] .approval-item { border-radius: 7px; box-shadow: 6px 6px 0 #dce5f2; }
+body[data-design="studio"] .builder-chat { background: #edf2fa; }
+body[data-design="studio"] .builder-canvas { background: #dfe7f3; }
+body[data-design="studio"] .tool-browser { border-color: #9eafc9; box-shadow: 8px 8px 0 #cad6e8; }
+body[data-design="studio"] .design-lab { border-color: #b9c8df; background: #f8faffe8; }
+
+@media (max-width: 980px) {
+  body[data-design="studio"] .hero {
+    display: block;
+    padding: 74px 0;
+    text-align: center;
+  }
+  body[data-design="studio"] .hero .eyebrow { display: inline-flex; }
+  body[data-design="studio"] .hero-copy,
+  body[data-design="studio"] .prompt-card,
+  body[data-design="studio"] .hero-proof { margin-inline: auto; }
+  body[data-design="studio"] .prompt-card { width: min(780px, 100%); margin-top: 36px; text-align: left; }
+  body[data-design="studio"] .capability-row,
+  body[data-design="studio"] .prompt-examples { justify-content: center; }
+  body[data-design="studio"] .hero-proof { width: min(760px, 100%); }
+  .builder-body { grid-template-columns: 1fr 280px; }
+}
+
+@media (max-width: 760px) {
+  .design-lab { right: 10px; bottom: 68px; }
+  .design-lab > span { display: none; }
+  .hero-doodles { display: none; }
+  .hero-proof { grid-template-columns: 1fr 1fr; }
+  .hero-proof div:nth-child(2) { border-right: 0; }
+  .hero-proof div:nth-child(n+3) { margin-top: 11px; padding-top: 11px; border-top: 1px solid #e2dfd8; }
+  body[data-design="cloud"] .site-nav { width: calc(100% - 20px); margin-top: 8px; padding-inline: 12px; }
+  body[data-design="studio"] .hero { padding-top: 58px; }
+  .showcase-body { grid-template-columns: 1fr; }
+  .build-chat,
+  .builder-chat { display: none; }
+  .preview-space,
+  .builder-canvas { grid-column: 1; }
+}

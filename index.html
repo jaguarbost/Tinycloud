@@ -15,8 +15,14 @@
   <meta name="twitter:image" content="og.png">
   <title>TinyCloud for ACME — Tiny tools for everyday work</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="designs.css">
 </head>
-<body>
+<body data-design="cloud">
+  <div class="design-lab" aria-label="Compare visual designs">
+    <span>Try a look</span>
+    <button class="active" type="button" data-design-option="cloud"><i></i>Cloud</button>
+    <button type="button" data-design-option="studio"><i></i>Studio</button>
+  </div>
   <div id="landing" class="landing">
     <header class="site-nav container">
       <a class="brand" href="#" aria-label="TinyCloud home">
@@ -32,6 +38,7 @@
     <main>
       <section class="hero container">
         <div class="hero-aura aura-one"></div><div class="hero-aura aura-two"></div>
+        <div class="hero-doodles" aria-hidden="true"><i>✦</i><i>↗</i><i>58s</i></div>
         <div class="eyebrow"><span></span> Not another vibe-coding tool</div>
         <h1>Build everyday <span class="moving-gradient">TinyTools</span><br>made to be <span class="moving-gradient alt">decommissioned.</span></h1>
         <p class="hero-copy"><strong>Built for superfast deployment, radical simplicity, and a quick share.</strong> Describe the small job. TinyCloud creates the lightest useful tool, gets it approved, shares it across ACME—and lets it disappear when the work is done.</p>
@@ -42,6 +49,7 @@
         </form>
         <div class="capability-row" aria-label="Things you can create"><span>Create</span><b>TinyTools</b><i>·</i><b>Shareable forms</b><i>·</i><b>Quick presentations</b><i>·</i><b>Demos</b><i>·</i><b>Dashboards</b></div>
         <div class="prompt-examples" id="examples"><span>Try one:</span><button data-prompt="Compare supplier quotes including delivery costs">Compare supplier quotes</button><button data-prompt="Run a team lunch poll for Friday">Run a lunch poll</button><button data-prompt="Score interview candidates consistently">Score interviews</button></div>
+        <div class="hero-proof" aria-label="TinyCloud product promises"><div><b>58 sec</b><span>prompt to preview</span></div><div><b>1 file</b><span>for the tiny jobs</span></div><div><b>18 min</b><span>average approval</span></div><div><b>£0</b><span>while sleeping</span></div></div>
       </section>
 
       <section class="product-showcase container" aria-label="TinyCloud product preview">

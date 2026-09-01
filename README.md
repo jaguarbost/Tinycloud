@@ -11,6 +11,8 @@ Generated tools start with one HTML file containing CSS and vanilla JavaScript. 
 ## Included prototype surfaces
 
 - Marketing landing page with animated gradient headline and rapid-deployment rocket sequence
+- Switchable Cloud and Studio visual directions across the landing page and workspace
+- Right-side build conversation beside the live TinyTool preview
 - Prompt-to-tool creation flow
 - Interactive supplier quote TinyTool
 - AI edit conversation mock

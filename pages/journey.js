@@ -1,4 +1,11 @@
 const currentPage = document.body.dataset.page || 'create';
+const journeyDesignStyles = document.createElement('link');
+journeyDesignStyles.rel = 'stylesheet';
+journeyDesignStyles.href = 'designs.css';
+document.head.append(journeyDesignStyles);
+let savedJourneyDesign = 'cloud';
+try { savedJourneyDesign = localStorage.getItem('tinycloudDesign') || 'cloud'; } catch { /* File previews can restrict storage. */ }
+document.body.dataset.design = savedJourneyDesign === 'studio' ? 'studio' : 'cloud';
 
 const navItems = [
   ['create', 'create.html', '+', 'Create'],
@@ -15,8 +22,24 @@ const sidebar = document.querySelector('#journey-sidebar');
 if (header) {
   header.innerHTML = `
     <a class="j-brand" href="../index.html"><span class="j-brand-mark"><i></i><i></i><i></i></span><strong>TinyCloud</strong><em>ACME</em></a>
-    <div class="j-top-actions"><button aria-label="Search">⌕</button><button aria-label="Help">?</button><button aria-label="Notifications">♢</button><span>MJ</span></div>`;
+    <div class="j-top-actions"><div class="j-design-switcher" aria-label="Compare visual designs"><button type="button" data-design-option="cloud">Cloud</button><button type="button" data-design-option="studio">Studio</button></div><button aria-label="Search">⌕</button><button aria-label="Help">?</button><button aria-label="Notifications">♢</button><span>MJ</span></div>`;
 }
+
+document.querySelectorAll('[data-design-option]').forEach((button) => {
+  const selected = button.dataset.designOption === document.body.dataset.design;
+  button.classList.toggle('active', selected);
+  button.setAttribute('aria-pressed', String(selected));
+  button.addEventListener('click', () => {
+    const design = button.dataset.designOption === 'studio' ? 'studio' : 'cloud';
+    document.body.dataset.design = design;
+    try { localStorage.setItem('tinycloudDesign', design); } catch { /* Keep the current-page design. */ }
+    document.querySelectorAll('[data-design-option]').forEach((option) => {
+      const active = option.dataset.designOption === design;
+      option.classList.toggle('active', active);
+      option.setAttribute('aria-pressed', String(active));
+    });
+  });
+});
 
 if (sidebar) {
   sidebar.innerHTML = `

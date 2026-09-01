@@ -4,6 +4,26 @@ const appViews = [...document.querySelectorAll('.app-view')];
 const sideNavButtons = [...document.querySelectorAll('.app-sidebar [data-view]')];
 let pendingPrompt = '';
 
+const designButtons = [...document.querySelectorAll('[data-design-option]')];
+const readDesign = () => {
+  try { return localStorage.getItem('tinycloudDesign') || 'cloud'; } catch { return 'cloud'; }
+};
+const savedDesign = readDesign();
+
+function applyDesign(design) {
+  const nextDesign = design === 'studio' ? 'studio' : 'cloud';
+  document.body.dataset.design = nextDesign;
+  designButtons.forEach((button) => {
+    const selected = button.dataset.designOption === nextDesign;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  try { localStorage.setItem('tinycloudDesign', nextDesign); } catch { /* Design still works for this page. */ }
+}
+
+designButtons.forEach((button) => button.addEventListener('click', () => applyDesign(button.dataset.designOption)));
+applyDesign(savedDesign);
+
 const showApp = (prompt = '') => {
   pendingPrompt = prompt;
   landing.hidden = true;

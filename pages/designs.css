@@ -1,0 +1,113 @@
+/* Shared visual options for every TinyCloud workspace route. */
+.j-design-switcher {
+  display: flex;
+  gap: 3px;
+  margin-right: 7px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f1f0ec;
+}
+.j-top-actions .j-design-switcher button {
+  width: auto;
+  height: 25px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+.j-top-actions .j-design-switcher button.active { color: #fff; background: var(--ink); }
+
+/* Keep the working result dominant and the build conversation on the right. */
+.j-tool-layout { grid-template-columns: 1fr 320px; }
+.j-tool-chat {
+  grid-column: 2;
+  grid-row: 1;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+.j-tool-canvas { grid-column: 1; grid-row: 1; }
+
+body[data-design="cloud"] .j-topbar { background: #fffdf9eb; }
+body[data-design="cloud"] .j-sidebar { background: #f0eee8; }
+body[data-design="cloud"] .j-new-tool {
+  background: linear-gradient(110deg, #18201e, #323d38);
+  box-shadow: 0 9px 22px #18201e1c;
+}
+body[data-design="cloud"] .j-canvas,
+body[data-design="cloud"] .j-create-form,
+body[data-design="cloud"] .j-example-preview,
+body[data-design="cloud"] .j-live-tool,
+body[data-design="cloud"] .j-table-card,
+body[data-design="cloud"] .j-action-card,
+body[data-design="cloud"] .j-share-card { border-radius: 15px; }
+body[data-design="cloud"] .j-create-form:focus-within {
+  border-color: #e8a997;
+  box-shadow: 0 0 0 5px #fff1eb, 0 20px 44px #ff654518;
+}
+body[data-design="cloud"] .j-existing-card,
+body[data-design="cloud"] .j-connector-card { transition: transform .2s ease, border-color .2s ease; }
+body[data-design="cloud"] .j-existing-card:hover,
+body[data-design="cloud"] .j-connector-card:hover { transform: translateY(-3px); }
+
+body[data-design="studio"] {
+  --ink: #13213c;
+  --muted: #64718a;
+  --line: #ccd7e7;
+  --paper: #f3f7fc;
+  --white: #fff;
+  --coral: #2867e8;
+  --green: #148067;
+  --amber: #986918;
+  --purple: #7358df;
+  --blue: #2867e8;
+  background: #f3f7fc;
+  background-image: linear-gradient(#dbe3ef55 1px, transparent 1px), linear-gradient(90deg, #dbe3ef55 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+body[data-design="studio"] .j-topbar { border-color: #c6d2e3; background: #f7f9fdee; }
+body[data-design="studio"] .j-brand-mark i,
+body[data-design="studio"] .j-brand-mark i:first-child,
+body[data-design="studio"] .j-brand-mark i:nth-child(3) { background: #2867e8; }
+body[data-design="studio"] .j-brand-mark i:first-child { background: #886af0; }
+body[data-design="studio"] .j-brand-mark i:nth-child(3) { background: #23af91; }
+body[data-design="studio"] .j-sidebar { border-color: #c6d2e3; background: #e7edf7; }
+body[data-design="studio"] .j-sidebar nav a:hover { background: #dce5f2; }
+body[data-design="studio"] .j-sidebar nav a.active { border: 1px solid #c5d2e5; border-radius: 5px; box-shadow: 4px 4px 0 #cfdced; }
+body[data-design="studio"] .j-new-tool,
+body[data-design="studio"] .j-create-form button,
+body[data-design="studio"] .j-heading > a,
+body[data-design="studio"] .j-heading > button:not(.secondary),
+body[data-design="studio"] .j-tool-toolbar .primary { background: #2867e8; }
+body[data-design="studio"] .j-vibe-left,
+body[data-design="studio"] .j-tool-chat { background: #edf2fa; }
+body[data-design="studio"] .j-vibe-right,
+body[data-design="studio"] .j-tool-canvas { background: #dfe7f3; }
+body[data-design="studio"] .j-canvas,
+body[data-design="studio"] .j-create-form,
+body[data-design="studio"] .j-example-preview,
+body[data-design="studio"] .j-live-tool,
+body[data-design="studio"] .j-table-card,
+body[data-design="studio"] .j-action-card,
+body[data-design="studio"] .j-share-card,
+body[data-design="studio"] .j-connector-card {
+  border-color: #b9c8de;
+  border-radius: 6px;
+  box-shadow: 7px 7px 0 #d5e0ef;
+}
+body[data-design="studio"] .j-welcome > span { border-radius: 6px; background: linear-gradient(135deg, #2867e8, #7658e8); box-shadow: 7px 7px 0 #cbd9ef; }
+body[data-design="studio"] .j-existing-card { border-color: #c5d2e4; border-radius: 5px; background: #f7f9fd; }
+body[data-design="studio"] .j-kicker { color: #2867e8; }
+body[data-design="studio"] .j-tool-frame { border-color: #9eafc9; box-shadow: 8px 8px 0 #c8d5e7; }
+body[data-design="studio"] .j-metrics article { border-color: #c3d0e2; border-radius: 5px; box-shadow: 4px 4px 0 #d8e2ef; }
+body[data-design="studio"] .j-community-hero { background: linear-gradient(120deg, #e6edff, #e5faf4); }
+body[data-design="studio"] .j-incident-preview { background: #e5ecf6; }
+
+@media (max-width: 760px) {
+  .j-design-switcher { margin-right: 2px; }
+  .j-top-actions .j-design-switcher button { padding: 0 7px; }
+  .j-top-actions > button:nth-of-type(-n+2) { display: none; }
+  .j-tool-layout { grid-template-columns: 1fr; }
+  .j-tool-chat { display: none; }
+  .j-tool-canvas { grid-column: 1; }
+}
