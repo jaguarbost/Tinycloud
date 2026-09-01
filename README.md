@@ -1,51 +1,36 @@
-# TinyCloud for ACME
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A standalone static prototype for creating, governing, sharing, and intentionally decommissioning tiny workplace tools.
+## Getting Started
 
-## Product position
+First, run the development server:
 
-TinyCloud is not another vibe-coding tool. It is designed for small, everyday software that should deploy quickly, share safely, and disappear cleanly when the job is done.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Generated tools start with one HTML file containing CSS and vanilla JavaScript. Temporary storage, persistent data, connectors, or server functions are added only when the request genuinely needs them.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Included prototype surfaces
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Marketing landing page with animated gradient headline and rapid-deployment rocket sequence
-- Prompt-to-tool creation flow
-- Interactive supplier quote TinyTool
-- AI edit conversation mock
-- Tool settings, access, retention, connectors, and lifecycle controls
-- Tools inventory
-- Automated governance, privacy, accuracy, and risk preflight
-- Human approvals queue
-- Governance dashboard and policy status
-- Lifecycle, sleeping, wake, archive, and decommissioning actions
-- Jira, Snowflake, HubSpot, Salesforce, Google Sheets, and Stripe connector mocks
-- Review-gated ACME subdomain sharing
-- Transparent public-plan pricing comparison
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Standalone journey pages
+## Learn More
 
-- `pages/create.html` — prompt and existing examples
-- `pages/creating.html` — animated architecture, build, test, and policy progress
-- `pages/tool.html` — working TinyTool with chat and preview panels
-- `pages/tools.html` — dashboards, internal sites, presentations, and more
-- `pages/women-at-acme.html` — standalone internal community site
-- `pages/q4-launch-deck.html` — standalone interactive presentation deck
-- `pages/incident-command-dashboard.html` — standalone operations dashboard
-- `pages/approvals.html` — decisions with risk, usage, data, and connector context
-- `pages/governance.html` — governance management, ownership, and usage
-- `pages/lifecycle.html` — sleeping, waking, archiving, and decommissioning
-- `pages/connectors.html` — approved ACME connectors
-- `pages/settings.html` — access, retention, routing, and connectors
-- `pages/share.html` — ACME subdomain and internal-review status
+To learn more about Next.js, take a look at the following resources:
 
-## Run locally
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Open `index.html` directly, or serve this folder with any static web server.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-No packages, framework, build step, database, or API key are required.
+## Deploy on Vercel
 
-## Prototype note
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-All data and actions are browser-only demonstration state. The pricing section uses a disclosed comparison scenario and links to vendor pricing pages. Enterprise prices are shown as quote-only when the vendor does not publish a fixed amount.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
